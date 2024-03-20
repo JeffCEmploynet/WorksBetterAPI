@@ -22,9 +22,14 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/EmployeesModels
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employees>>> GetEmployeesModels()
+        public async Task<ActionResult<IEnumerable<Employees>>> GetEmployeesModels(long? id, string? firstName, string? lastName)
         {
-            return await _context.Employees.ToListAsync();
+            if(id != null) { return Ok(_context.Employees.Where(dd => dd.Id == id).ToArray()); }
+            if(firstName != null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.FirstName == firstName && dd.LastName == lastName).ToArray()); }
+            if (firstName != null && lastName == null) { return Ok(_context.Employees.Where(dd => dd.FirstName == firstName).ToArray()); }
+            if (firstName == null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.LastName == lastName).ToArray()); }
+
+            return BadRequest("Invalid Parameters");
         }
 
         // GET: api/EmployeesModels/5
