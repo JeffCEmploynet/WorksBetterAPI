@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WorksBetterAPI.Models
 {
     public class Employees
     {
-        [Required] 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public long Id { get; set; }
         [Required]
         public string FirstName { get; set; }
