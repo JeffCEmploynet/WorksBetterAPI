@@ -1,0 +1,6 @@
+@WorksBetterAPI_HostAddress = http://localhost:5204
+
+GET {{WorksBetterAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorksBetterAPI", "WorksBetterAPI\WorksBetterAPI.csproj", "{AB2F2A5B-8654-47B2-BDF1-51F4A7EAE056}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB2F2A5B-8654-47B2-BDF1-51F4A7EAE056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2F2A5B-8654-47B2-BDF1-51F4A7EAE056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2F2A5B-8654-47B2-BDF1-51F4A7EAE056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2F2A5B-8654-47B2-BDF1-51F4A7EAE056}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D110654F-1AB7-4383-B5FF-F9FB59D26A15}
+	EndGlobalSection
+EndGlobal
