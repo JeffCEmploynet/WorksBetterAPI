@@ -22,9 +22,11 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Customers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers(string? customerName, long? customerId)
         {
-            return await _context.Customers.ToListAsync();
+            if(customerId != null && customerId > 0) { return Ok(_context.Customers.Where(dd => dd.Id == customerId).ToArray()); }
+            else if (customerName != null) { return Ok(_context.Customers.Where(dd => dd.CustomerName == customerName).ToArray()); }
+            return BadRequest("Invalid Parameters");
         }
 
         // GET: api/Customers/5

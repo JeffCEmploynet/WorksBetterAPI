@@ -21,8 +21,9 @@ public class Customers
     public string State { get; set; }
 
     public string Branch { get; set; }
+    public string? AccountManager { get; set; }
     public string? SalesTeam { get; set; }
-    public DateOnly? ActiveDate { get; set; }
+    public DateTime? ActiveDate { get; set; }
     public string? PayTerms { get; set; }
     public string? Note {  get; set; }
     public string? Status { get; set; }
