@@ -25,6 +25,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<EmployeesContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<CustomersContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<JobOrdersContext>(opt => opt.UseSqlServer(connection));
+builder.Services.AddDbContext<AssignmentsContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

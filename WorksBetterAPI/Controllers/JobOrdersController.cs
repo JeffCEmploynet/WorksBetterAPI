@@ -25,10 +25,10 @@ namespace WorksBetterAPI.Controllers
         public async Task<ActionResult<IEnumerable<JobOrders>>> GetJobOrders(string? customerName, long? customerId, string? jobTitle, long? orderId, string? branch)
         {
             if (customerId != null && customerId > 0) { return Ok(_context.JobOrders.Where(dd => dd.CustomerId == customerId).ToArray()); }
-            else if (customerName != null) { return Ok(_context.JobOrders.Where(dd => dd.CustomerName == customerName).ToArray()); }
-            else if (orderId != null && orderId > 0) { return Ok(_context.JobOrders.Where(dd => dd.JobOrdersId == orderId).ToArray()); }
-            else if (jobTitle != null) { return Ok(_context.JobOrders.Where(dd => dd.JobTitle == jobTitle).ToArray()); }
-            else if (branch != null) { return Ok(_context.JobOrders.Where(dd => dd.Branch == branch).ToArray()); }
+            else if (customerName != null && customerName != "undefined") { return Ok(_context.JobOrders.Where(dd => dd.CustomerName == customerName).ToArray()); }
+            else if (int.TryParse(orderId.ToString(), out _) && orderId != null && orderId > 0) { return Ok(_context.JobOrders.Where(dd => dd.JobOrdersId == orderId).ToArray()); }
+            else if (jobTitle != null && jobTitle != "undefined") { return Ok(_context.JobOrders.Where(dd => dd.JobTitle == jobTitle).ToArray()); }
+            else if (branch != null && branch != "undefined") { return Ok(_context.JobOrders.Where(dd => dd.Branch == branch).ToArray()); }
 
             return BadRequest("Invalid Parameters");
         }
