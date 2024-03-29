@@ -22,9 +22,10 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Assignments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments(string? firstName, string? lastName, long? assignmentId ,string? customerName, long? customerId, string? jobTitle, long? orderId, string? branch)
+        public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments(string? firstName, string? lastName, long? employeeId, long? assignmentId ,string? customerName, long? customerId, string? jobTitle, long? orderId, string? branch)
         { 
             if (assignmentId != null && assignmentId > 0) { return Ok(_context.Assignments.Where(dd => dd.Id == assignmentId).ToArray()); }
+            else if (employeeId != null && employeeId > 0) { return Ok(_context.Assignments.Where(dd => dd.EmployeeId == employeeId).ToArray()); }
             else if (lastName != null && lastName != "undefined") { return Ok(_context.Assignments.Where(dd => dd.LastName == lastName).ToArray()); }
             else if (firstName != null && firstName != "undefined") { return Ok(_context.Assignments.Where(dd => dd.FirstName == firstName).ToArray()); }
             else if (customerId != null && customerId > 0) { return Ok(_context.Assignments.Where(dd => dd.CustomerId == customerId).ToArray()); }
