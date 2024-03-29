@@ -11,11 +11,14 @@ public class Assignments
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
-    public string EmployeeName { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
     public long EmployeeId { get; set; }
     public long OrderId { get; set; }
     public string JobTitle { get; set; }
     public long CustomerId { get; set; }
+    public string CustomerName { get; set; }
+    public string Branch {  get; set; }
     public string Status { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime? EndDate { get; set; }
@@ -24,8 +27,8 @@ public class Assignments
     public TimeOnly? StartTime { get; set; }
     public TimeOnly? EndTime { get; set; }
     public string? ShiftNotes { get; set; }
-    public double? PayRate { get; set; }
-    public double? BillRate { get; set; }
-    public double? Salary { get; set; }
+    public decimal? PayRate { get; set; }
+    public decimal? BillRate { get; set; }
+    public decimal? Salary { get; set; }
     public int W2 { get; set; }
 }

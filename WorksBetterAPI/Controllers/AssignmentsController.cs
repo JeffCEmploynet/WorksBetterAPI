@@ -22,9 +22,18 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Assignments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments()
-        {
-            return await _context.Assignments.ToListAsync();
+        public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments(string? firstName, string? lastName, long? assignmentId ,string? customerName, long? customerId, string? jobTitle, long? orderId, string? branch)
+        { 
+            if (assignmentId != null && assignmentId > 0) { return Ok(_context.Assignments.Where(dd => dd.Id == assignmentId).ToArray()); }
+            else if (lastName != null && lastName != "undefined") { return Ok(_context.Assignments.Where(dd => dd.LastName == lastName).ToArray()); }
+            else if (firstName != null && firstName != "undefined") { return Ok(_context.Assignments.Where(dd => dd.FirstName == firstName).ToArray()); }
+            else if (customerId != null && customerId > 0) { return Ok(_context.Assignments.Where(dd => dd.CustomerId == customerId).ToArray()); }
+            else if (customerName != null && customerName != "undefined") { return Ok(_context.Assignments.Where(dd => dd.CustomerName == customerName).ToArray()); }
+            else if (int.TryParse(orderId.ToString(), out _) && orderId != null && orderId > 0) { return Ok(_context.Assignments.Where(dd => dd.OrderId == orderId).ToArray()); }
+            else if (jobTitle != null && jobTitle != "undefined") { return Ok(_context.Assignments.Where(dd => dd.JobTitle == jobTitle).ToArray()); }
+            else if (branch != null && branch != "undefined") { return Ok(_context.Assignments.Where(dd => dd.Branch == branch).ToArray()); }
+
+            return BadRequest("Invalid Parameters");
         }
 
         // GET: api/Assignments/5
