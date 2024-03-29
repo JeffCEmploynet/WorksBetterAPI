@@ -22,6 +22,13 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Customers
         [HttpGet]
+        public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers()
+        {
+            return await _context.Customers.ToListAsync();
+        }
+
+        // GET: api/Customers
+        [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers(string? customerName, long? customerId)
         {
             if(customerId != null && customerId > 0) { return Ok(_context.Customers.Where(dd => dd.Id == customerId).ToArray()); }
