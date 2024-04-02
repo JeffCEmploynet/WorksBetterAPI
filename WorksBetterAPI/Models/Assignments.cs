@@ -23,10 +23,6 @@ public class Assignments
     public DateTime StartDate { get; set; }
     public DateTime? EndDate { get; set; }
     public DateTime? ExpiryDate { get; set; }
-    public string? Shift { get; set; }
-    public TimeOnly? StartTime { get; set; }
-    public TimeOnly? EndTime { get; set; }
-    public string? ShiftNotes { get; set; }
     public decimal? PayRate { get; set; }
     public decimal? BillRate { get; set; }
     public decimal? Salary { get; set; }
