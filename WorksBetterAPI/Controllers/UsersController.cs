@@ -29,7 +29,7 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Users>> GetUsers(string id)
+        public async Task<ActionResult<Users>> GetUsers(long id)
         {
             var users = await _context.Users.FindAsync(id);
 
@@ -44,7 +44,7 @@ namespace WorksBetterAPI.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsers(string id, Users users)
+        public async Task<IActionResult> PutUsers(long id, Users users)
         {
             if (id != users.Id)
             {
@@ -85,7 +85,7 @@ namespace WorksBetterAPI.Controllers
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsers(string id)
+        public async Task<IActionResult> DeleteUsers(long id)
         {
             var users = await _context.Users.FindAsync(id);
             if (users == null)
@@ -99,7 +99,7 @@ namespace WorksBetterAPI.Controllers
             return NoContent();
         }
 
-        private bool UsersExists(string id)
+        private bool UsersExists(long id)
         {
             return _context.Users.Any(e => e.Id == id);
         }
