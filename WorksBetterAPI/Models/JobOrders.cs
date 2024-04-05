@@ -22,10 +22,11 @@ public class JobOrders
     public decimal BillRate { get; set; }
     public double BillCalc {  get; set; }
     public double OTBillCalc { get; set; }
-    public double DTBillCalc { get; set; }
+    public double? DTBillCalc { get; set; }
     public int  CountNeed {  get; set; }
     public int CountFilled { get; set; }
     public string Branch {  get; set; }
+    public Int32 BranchId { get; set; }
     public DateTime OpenDate { get; set; }
     public string Status { get; set; }
     public DateTime? CloseDate { get; set; }

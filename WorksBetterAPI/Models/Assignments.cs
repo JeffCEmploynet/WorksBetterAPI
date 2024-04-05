@@ -19,12 +19,15 @@ public class Assignments
     public long CustomerId { get; set; }
     public string CustomerName { get; set; }
     public string Branch {  get; set; }
+    public Int32 BranchId { get; set; }
     public string Status { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime? EndDate { get; set; }
     public DateTime? ExpiryDate { get; set; }
     public decimal? PayRate { get; set; }
     public decimal? BillRate { get; set; }
+    public decimal? OTBillRate { get; set; }
+    public decimal? DTBillRate { get; set; }
     public decimal? Salary { get; set; }
     public int W2 { get; set; }
 }

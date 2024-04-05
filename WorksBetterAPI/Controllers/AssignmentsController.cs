@@ -22,6 +22,13 @@ namespace WorksBetterAPI.Controllers
 
         // GET: api/Assignments
         [HttpGet]
+        public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments()
+        {
+            return await _context.Assignments.ToListAsync();
+        }
+
+        // GET: api/Assignments
+        [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<Assignments>>> GetAssignments(string? firstName, string? lastName, long? employeeId, long? assignmentId ,string? customerName, long? customerId, string? jobTitle, long? orderId, string? branch)
         { 
             if (assignmentId != null && assignmentId > 0) { return Ok(_context.Assignments.Where(dd => dd.Id == assignmentId).ToArray()); }

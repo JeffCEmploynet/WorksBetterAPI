@@ -16,6 +16,7 @@ public class Timecards
     public long AssignmentId { get; set; }
     public long EmployeeId { get; set; }
     public long CustomerId { get; set; }
+    public string CustomerName { get; set; }
     public Int32 BranchId { get; set; }
     public decimal? RHours { get; set; }
     public decimal? OHours { get; set; }
@@ -28,5 +29,4 @@ public class Timecards
     public decimal BillRate { get; set; }
     public decimal OTBillRate {  get; set; }
     public decimal? DTBillRate { get; set; }
-    public long SessionId { get; set; }
 }

@@ -26,5 +26,6 @@ namespace WorksBetterAPI.Models
         public string Email { get; set; }
         [Required]
         public string Branch { get; set; }
+        public Int32 BranchId { get; set; }
     }
 }

@@ -11,6 +11,7 @@ public class Customers
     [Required]
     public string CustomerName { get; set; }
     public string Department {  get; set; }
+    public long? RootId { get; set; }
     public string MainContact {  get; set; }
     public string Phone {  get; set; }
     public string Email { get; set; }
@@ -21,6 +22,7 @@ public class Customers
     public string State { get; set; }
 
     public string Branch { get; set; }
+    public Int32 BranchId { get; set; }
     public string? AccountManager { get; set; }
     public string? SalesTeam { get; set; }
     public DateTime? ActiveDate { get; set; }
