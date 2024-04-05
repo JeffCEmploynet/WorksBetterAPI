@@ -17,6 +17,7 @@ public class Timecards
     public long EmployeeId { get; set; }
     public long CustomerId { get; set; }
     public string CustomerName { get; set; }
+    public string Branch {  get; set; }
     public Int32 BranchId { get; set; }
     public decimal? RHours { get; set; }
     public decimal? OHours { get; set; }
