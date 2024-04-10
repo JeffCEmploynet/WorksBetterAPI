@@ -27,6 +27,14 @@ namespace WorksBetterAPI.Controllers
             return await _context.TaxSetup.ToListAsync();
         }
 
+        // GET: api/TaxSetups
+        [HttpGet("EmployeeId")]
+        public async Task<ActionResult<IEnumerable<TaxSetup>>> GetTaxSetupByEEID(long employeeId)
+        {
+            if (employeeId != null && employeeId > 0) { return Ok(_context.TaxSetup.Where(dd => dd.EmployeeId == employeeId)); }
+            return BadRequest("Invalid Parameters");
+        }
+
         // GET: api/TaxSetups/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TaxSetup>> GetTaxSetup(long id)

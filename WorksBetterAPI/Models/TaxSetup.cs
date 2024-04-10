@@ -9,7 +9,7 @@ public class TaxSetup
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
-    public long AssignId { get; set; }
+    public long EmployeeId { get; set; }
     public string? Zip {  get; set; }
     public double? LocalTax { get; set; }
     public string? State { get; set; }
