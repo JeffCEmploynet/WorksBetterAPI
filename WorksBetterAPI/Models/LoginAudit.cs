@@ -1,7 +1,11 @@
-﻿namespace WorksBetterAPI.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WorksBetterAPI.Models;
 
 public class LoginAudit
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public long Id { get; set; }
     public string UserName { get; set; }
     public DateTime LoginDate { get; set; }
     public DateTime ExpirationDate { get; set; }
@@ -13,4 +17,3 @@ public class LoginAudit
     public string UserType { get; set; }
     public Int32 AuthLevel { get; set; }
 }
- = 

@@ -30,6 +30,7 @@ builder.Services.AddDbContext<UsersContext>(opt => opt.UseSqlServer(connection))
 builder.Services.AddDbContext<BranchesContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<TimecardsContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<TaxSetupContext>(opt => opt.UseSqlServer(connection));
+builder.Services.AddDbContext<LoginAuditContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

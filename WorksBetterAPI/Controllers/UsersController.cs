@@ -41,30 +41,6 @@ namespace WorksBetterAPI.Controllers
             return users;
         }
 
-        // Get api/Users
-        [HttpGet]
-        public async Task<ActionResult<LoginAudit>> LoginUser(string username, string password)
-        {
-            Users isValidUser = await _context.Users.FindAsync(username, password);
-            if (isValidUser != null) 
-            {
-                LoginAudit audit = new LoginAudit();
-                audit.UserName = username;
-                audit.LoginDate = DateTime.UtcNow;
-                audit.ExpirationDate = DateTime.UtcNow.AddDays(1);
-                audit.Token = Guid.NewGuid();
-                audit.FirstName = Users.FirstName;
-                audit.LastName = Users.LastName;
-                audit.BranchName = Users.BranchName;
-                audit.BranchId = Users.BranchId;
-                audit.UserType = Users.UserType;
-                audit.AuthLevel = Users.AuthLevel;
-
-                return audit;
-            }
-            return BadRequest("Invalid Parameters");
-        }
-
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
