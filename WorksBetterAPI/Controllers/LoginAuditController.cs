@@ -85,6 +85,7 @@ namespace WorksBetterAPI.Controllers
             if (ValidUser != null)
             {
                 LoginAudit audit = new LoginAudit();
+                audit.UserId = ValidUser.Id;
                 audit.UserName = username;
                 audit.LoginDate = DateTime.UtcNow;
                 audit.ExpirationDate = DateTime.UtcNow.AddDays(1);

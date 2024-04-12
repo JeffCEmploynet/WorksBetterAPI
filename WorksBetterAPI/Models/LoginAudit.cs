@@ -16,4 +16,5 @@ public class LoginAudit
     public Int32 BranchId { get; set; }
     public string UserType { get; set; }
     public Int32 AuthLevel { get; set; }
+    public long UserId { get; set; }
 }
