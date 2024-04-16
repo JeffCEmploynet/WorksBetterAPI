@@ -31,4 +31,6 @@ public class Timecards
     public decimal OTBillRate {  get; set; }
     public decimal? DTBillRate { get; set; }
     public long? SessionId { get; set; }
+    public string? SessionUser { get; set; }
+    public string? Status { get; set; }
 }

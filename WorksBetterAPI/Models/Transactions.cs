@@ -33,8 +33,8 @@ public class Transactions
     public decimal LocalTaxes { get; set; }
     public decimal StateTaxes { get; set; }
     public decimal FederalTaxes { get; set; }
-    public DateTime WeekEndingDate { get; set; }
-    public DateTime WeekEndingBill {  get; set; }
+    public DateTime? WeekEndingDate { get; set; }
+    public DateTime? WeekEndingBill {  get; set; }
     public long InvoiceNumber { get; set; }
     public long CheckId { get; set; }
 }
