@@ -21,6 +21,7 @@ public class CheckRegister
     public decimal LocalTaxes { get; set; }
     public decimal StateTaxes { get; set; }
     public decimal FederalTaxes { get; set; }
+    public decimal? AddedWithholding { get; set; }
     public DateTime WeekEndingDate { get; set; }
     public DateTime? WeekEndingBill { get; set; }
     public string FirstName { get; set; }
