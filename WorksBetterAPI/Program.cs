@@ -36,6 +36,7 @@ builder.Services.AddDbContext<TimecardsContext>(opt => opt.UseSqlServer(connecti
 builder.Services.AddDbContext<CheckRegisterContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<InvoiceRegisterContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddDbContext<TransactionsContext>(opt => opt.UseSqlServer(connection));
+builder.Services.AddDbContext<ChecksContext>(opt => opt.UseSqlServer(connection));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

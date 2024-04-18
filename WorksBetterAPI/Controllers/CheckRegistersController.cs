@@ -27,6 +27,20 @@ namespace WorksBetterAPI.Controllers
             return await _context.CheckRegister.ToListAsync();
         }
 
+        // GET: api/CheckRegisters
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<CheckRegister>>> GetCheckRegister(string? firstName, string? lastName, long? employeeId, long? checkId, long? checkNumber)
+        {
+            if (employeeId != null && employeeId > 0) { return Ok(_context.CheckRegister.Where(dd => dd.EmployeeId == employeeId).ToArray()); }
+            else if (lastName != null && lastName != "undefined") { return Ok(_context.CheckRegister.Where(dd => dd.LastName == lastName).ToArray()); }
+            else if (firstName != null && firstName != "undefined") { return Ok(_context.CheckRegister.Where(dd => dd.FirstName == firstName).ToArray()); }
+            else if (employeeId != null && employeeId > 0) { return Ok(_context.CheckRegister.Where(dd => dd.EmployeeId == employeeId).ToArray()); }
+            else if (checkId != null && checkId > 0) { return Ok(_context.CheckRegister.Where(dd => dd.Id == checkId).ToArray()); }
+            else if (checkNumber != null && checkNumber > 0) { return Ok(_context.CheckRegister.Where(dd => dd.CheckNumber == checkNumber).ToArray()); }
+
+            return BadRequest("Invalid Parameters");
+        }
+
         // GET: api/CheckRegisters/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CheckRegister>> GetCheckRegister(long id)

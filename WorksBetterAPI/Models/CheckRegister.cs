@@ -14,15 +14,15 @@ public class CheckRegister
     public decimal OHours { get; set; }
     public decimal? DHours { get; set; }
     public decimal PayRate { get; set; }
-    public decimal OTPayRate { get; set; }
-    public decimal? DTPayRate { get; set; }
+    public decimal OPayRate { get; set; }
+    public decimal? DPayRate { get; set; }
     public decimal GrossPay { get; set; }
     public decimal NetPay { get; set; }
     public decimal LocalTaxes { get; set; }
     public decimal StateTaxes { get; set; }
     public decimal FederalTaxes { get; set; }
     public DateTime WeekEndingDate { get; set; }
-    public DateTime WeekEndingBill { get; set; }
+    public DateTime? WeekEndingBill { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public long EmployeeId { get; set; }
