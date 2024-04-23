@@ -32,7 +32,7 @@ namespace WorksBetterAPI.Controllers
         public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers(string? customerName, long? customerId)
         {
             if(customerId != null && customerId > 0) { return Ok(_context.Customers.Where(dd => dd.Id == customerId).ToArray()); }
-            else if (customerName != null) { return Ok(_context.Customers.Where(dd => dd.CustomerName == customerName).ToArray()); }
+            else if (customerName != null) { return Ok(_context.Customers.Where(dd => dd.CustomerName.StartsWith(customerName)).ToArray()); }
             return BadRequest("Invalid Parameters");
         }
 
