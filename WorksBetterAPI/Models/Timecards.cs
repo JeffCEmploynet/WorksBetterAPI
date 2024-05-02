@@ -33,4 +33,5 @@ public class Timecards
     public long? SessionId { get; set; }
     public string? SessionUser { get; set; }
     public string? Status { get; set; }
+    public DateTime ProcessingWeek { get; set; }
 }
