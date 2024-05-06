@@ -31,7 +31,7 @@ namespace WorksBetterAPI.Controllers
         [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<Timecards>>> GetTimecards(string? firstName, string? lastName, long? employeeId, long? assignmentId, string? customerName, long? customerId)
         {
-            if (assignmentId != null && assignmentId > 0) { return Ok(_context.Timecards.Where(dd => dd.Id == assignmentId).ToArray()); }
+            if (assignmentId != null && assignmentId > 0) { return Ok(_context.Timecards.Where(dd => dd.AssignmentId == assignmentId).ToArray()); }
             else if (employeeId != null && employeeId > 0) { return Ok(_context.Timecards.Where(dd => dd.EmployeeId == employeeId).ToArray()); }
             else if (lastName != null && lastName != "undefined") { return Ok(_context.Timecards.Where(dd => dd.LastName == lastName).ToArray()); }
             else if (firstName != null && firstName != "undefined") { return Ok(_context.Timecards.Where(dd => dd.FirstName == firstName).ToArray()); }
