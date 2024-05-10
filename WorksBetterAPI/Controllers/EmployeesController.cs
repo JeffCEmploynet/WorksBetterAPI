@@ -25,9 +25,9 @@ namespace WorksBetterAPI.Controllers
         public async Task<ActionResult<IEnumerable<Employees>>> GetEmployeesModels(long? id, string? firstName, string? lastName)
         {
             if(id != null && id > 0) { return Ok(_context.Employees.Where(dd => dd.Id == id).ToArray()); }
-            else if(firstName != null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.FirstName == firstName && dd.LastName == lastName).ToArray()); }
-            else if (firstName != null && lastName == null) { return Ok(_context.Employees.Where(dd => dd.FirstName == firstName).ToArray()); }
-            else if (firstName == null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.LastName == lastName).ToArray()); }
+            else if(firstName != null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.FirstName.StartsWith(firstName) && dd.LastName.StartsWith(lastName)).ToArray()); }
+            else if (firstName != null && lastName == null) { return Ok(_context.Employees.Where(dd => dd.FirstName.StartsWith(firstName)).ToArray()); }
+            else if (firstName == null && lastName != null) { return Ok(_context.Employees.Where(dd => dd.LastName.StartsWith(lastName)).ToArray()); }
 
             return BadRequest("Invalid Parameters");
         }
